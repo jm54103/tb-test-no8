@@ -1,0 +1,48 @@
+## Visual Studio Build Outputs
+██╗ bin/
+██╗ obj/
+[Bb]in/
+[Oo]bj/
+Generated_Code/
+
+## Visual Studio Cache and Settings
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## VS Code Settings
+.vscode/
+!.vscode/extensions.json
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## User-Specific Settings & Secrets
+*.user
+*.userprefs
+appsettings.Development.json
+appsettings.Local.json
+[Log]s/
+logs/
+*.log
+
+## .NET Core / ASP.NET Core User Secrets
+# หากใช้ User Secrets ระบบจะเก็บไว้นอกโฟลเดอร์โปรเจกต์อยู่แล้ว 
+# แต่ใส่ไว้เผื่อมีใครเผลอสร้างไว้ในโปรเจกต์
+secrets.json
+
+## Publish Output
+**/publish/
+
+## Package Manager Outputs
+*.nupkg
+**/packages/
+project.lock.json
+project.fragment.lock.json
+
+## Operating System Files
+.DS_Store
+Thumbs.db

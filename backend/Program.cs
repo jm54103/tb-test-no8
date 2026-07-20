@@ -1,0 +1,37 @@
+using Microsoft.EntityFrameworkCore;
+using Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+var DefaultConnectionSQLiteConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddSqlite<AppDbContext>(DefaultConnectionSQLiteConnectionString);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("All", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+Console.WriteLine("http://localhost:5000/swagger");
+Console.WriteLine("click to swagger");
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(); // เปิดใช้งาน UI ของ Swagger
+}
+
+app.UseHttpsRedirection();
+app.UseCors("All");
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();
