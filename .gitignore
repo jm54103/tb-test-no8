@@ -1,3 +1,41 @@
+## Node modules (โฟลเดอร์เก็บไลบรารี ห้ามเอาขึ้นเด็ดขาด)
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+## Angular Build outputs (ไฟล์ที่ได้จากการ build)
+/dist
+/bazel-out
+
+## Angular Cache
+/.angular
+
+## โฟลเดอร์ที่ได้จากการทดสอบ (Unit / E2E Testing)
+/coverage
+/cypress/screenshots
+/cypress/videos
+
+## IDE และ Text Editors
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+## Operating System Files
+.DS_Store
+Thumbs.db
+
+## ไฟล์สำหรับเก็บ Environment Variables (กรณีที่มีการแยก Key สำคัญ)
+.env
+.env.local
+
 ## Visual Studio Build Outputs
 ██╗ bin/
 ██╗ obj/

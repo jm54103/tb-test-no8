@@ -1,0 +1,78 @@
+<form name="question">
+<table style="width: 100%;background-color:white">
+<tr style="color: black;background-color: green;border-color: black;border: 1px;font-weight: bold ;">
+    <td align="center" >
+        IT 08-2
+    </td>
+</tr>
+<tr style="color: black;background-color: white;border-color: black;border: 1px;">
+    
+    <td align="center">
+    <table style="width:50%;">
+    <tr>
+        <td colspan="2" align="center">        
+            &nbsp;         
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">        
+            &nbsp;         
+        </td>
+    </tr>
+    <tr>
+        <td width="15%">คำถาม</td>
+        <td width="85%"><input type="text" name="question" style="width: 100%;" [(ngModel)]="item.question"></td>       
+    </tr>
+    <tr>
+        <td>คำตอบ 1</td>
+        <td><input type="text" name="answer1" value="" style="width: 100%;" [(ngModel)]="item.answer1Detail"></td>       
+    </tr>
+     <tr>
+        <td>คำตอบ  2</td>
+        <td><input type="text" name="answer2" value="" style="width: 100%;" [(ngModel)]="item.answer2Detail"></td>       
+    </tr>
+    <tr>
+        <td>คำตอบ 3</td>
+        <td><input type="text" name="answer3" value="" style="width: 100%;" [(ngModel)]="item.answer3Detail"></td>       
+    </tr>
+    <tr>
+        <td>คำตอบ  4</td>
+        <td><input type="text" name="answer4" value="" style="width: 100%;" [(ngModel)]="item.answer4Detail"></td>       
+    </tr>
+    <tr>
+        <td colspan="2" align="center">        
+            &nbsp;         
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">         
+            &nbsp;          
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button class="save-button" (click)="save()">บันทึก</button>
+            &nbsp;
+            <button class="cancel-button" (click)="cancel()">ยกเลิก</button>
+        </td>
+    </tr>
+        <tr>
+        <td colspan="2" align="center">          
+            &nbsp;           
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">        
+            &nbsp;         
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">         
+            &nbsp;          
+        </td>
+    </tr>
+    </table>
+    </td>
+</tr>
+</table>
+</form>
