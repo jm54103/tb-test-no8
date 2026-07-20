@@ -118,8 +118,9 @@ export class QuestionPage {
     
   }
 
-  cancel(){   
-    this.item=this.clear();
+  cancel(){       
     console.log('click cancel()');
+    this.item=this.clear();
+    this.router.navigate(['/']);
   }
 }

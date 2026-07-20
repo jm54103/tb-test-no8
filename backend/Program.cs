@@ -21,7 +21,21 @@ builder.Services.AddSwaggerGen();
 Console.WriteLine("http://localhost:5000/swagger");
 Console.WriteLine("click to swagger");
 
+
+
 var app = builder.Build();
+
+string wwwRoot = app.Environment.WebRootPath;
+string contentRoot = app.Environment.ContentRootPath;
+
+// เปิดใช้งาน Default Files (เช่น index.html)
+app.UseDefaultFiles();
+
+// เปิดใช้งาน Static Files ใน wwwroot
+app.UseStaticFiles();
+
+Console.WriteLine(wwwRoot);
+Console.WriteLine(contentRoot);
 
 if (app.Environment.IsDevelopment())
 {
