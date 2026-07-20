@@ -27,6 +27,11 @@ export class ExaminationPage implements OnInit {
     this.loading=false;
     console.debug('ngOnInit()');
     console.log('--- ngOnInit() ---');
+    this.loadQuestions();
+   
+  }
+
+  loadQuestions(){
     console.log('--- this.loading() ---' + this.loading);    
     this.examinationService.getQuestions().subscribe({
       next:(data) => {    
@@ -41,6 +46,21 @@ export class ExaminationPage implements OnInit {
         this.loading = false;
       }
     })
+
+  }
+
+  delete(id:number)
+  {
+    this.examinationService.deleteQuestion(id).subscribe({
+      next:(data)=>{
+         this.loadQuestions();
+      },
+      error: (err) => {
+        alert('เกิดข้อผิดพลาด:' + err.statusText);
+        console.error(err);
+        this.loading = false;
+      }
+    });
   }
 
 }

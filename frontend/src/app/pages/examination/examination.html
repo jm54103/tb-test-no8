@@ -1,12 +1,12 @@
 <!-- เนื้อหาของหน้า -->
- 
-<table style="width: 100%;background-color:white">
+<div class="page-container">
+<table style="width: 100%;background-color:white;">
 <tr style="color: black;background-color: green;border-color: black;border: 1px;font-weight: bold ;">
     <td align="center" >
         IT 08-1
     </td>
 </tr>
-<tr>
+<tr style="color: black;background-color: white;border-color: black;border: 1px;font-weight: bold ;">
   <td>
      <br>&nbsp;
     <button class="append-button"  type="button" [routerLink]="['/question']">เพิ่มข้อสอบ</button> 
@@ -38,7 +38,7 @@
           </table>
         </td>
         <td style="width: 150px; vertical-align: top;">
-          <button class="delete-button">ลบ</button>
+          <button class="delete-button" (click)="delete(item.id)">ลบ</button>
         </td>
       </tr>
     </table>
@@ -49,10 +49,10 @@
   </td>
 </tr>
 </table> 
-
 <!-- แปะบรรทัดนี้ไว้บนสุดของไฟล์ HTML เพื่อ Debug ดูค่าจริง -->
 <!--
 <pre>{{ questions | json }}</pre>
 -->
+</div> 
 
 

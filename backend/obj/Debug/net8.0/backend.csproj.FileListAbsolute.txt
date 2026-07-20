@@ -130,3 +130,4 @@ D:\workspace\tb-test-no8\backend\bin\Debug\net8.0\runtimes\win-arm64\native\e_sq
 D:\workspace\tb-test-no8\backend\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\workspace\tb-test-no8\backend\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\workspace\tb-test-no8\backend\bin\Debug\net8.0\dotnet-tools.json
+D:\workspace\tb-test-no8\backend\obj\Debug\net8.0\backend.sourcelink.json

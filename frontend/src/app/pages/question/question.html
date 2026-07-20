@@ -1,4 +1,5 @@
-<form name="question">
+<div class="page-container">
+<form [formGroup]="examinationForm" (ngSubmit)="onSubmit()">
 <table style="width: 100%;background-color:white">
 <tr style="color: black;background-color: green;border-color: black;border: 1px;font-weight: bold ;">
     <td align="center" >
@@ -21,23 +22,50 @@
     </tr>
     <tr>
         <td width="15%">คำถาม</td>
-        <td width="85%"><input type="text" name="question" style="width: 100%;" [(ngModel)]="item.question"></td>       
+        <td width="70%"><input type="text" name="question" style="width: 80%;"  formControlName="question" [(ngModel)]="item.question">
+            
+        </td>       
+        <td width="12%">
+            <div *ngIf="examinationForm.get('question')?.invalid && examinationForm.get('question')?.touched" class="hint">
+                กรุณากรอกคำถาม
+            </div>
+        </td>
     </tr>
     <tr>
         <td>คำตอบ 1</td>
-        <td><input type="text" name="answer1" value="" style="width: 100%;" [(ngModel)]="item.answer1Detail"></td>       
+        <td><input type="text" name="answer1" value="" style="width: 80%;" formControlName="answer1Detail" [(ngModel)]="item.answer1Detail"></td>    
+        <td>
+            <div *ngIf="examinationForm.get('answer1Detail')?.invalid && examinationForm.get('answer1Detail')?.touched" class="hint">
+                กรุณากรอกคำตอบ 1
+            </div>
+        </td>   
     </tr>
      <tr>
         <td>คำตอบ  2</td>
-        <td><input type="text" name="answer2" value="" style="width: 100%;" [(ngModel)]="item.answer2Detail"></td>       
+        <td><input type="text" name="answer2" value="" style="width: 80%;" formControlName="answer2Detail" [(ngModel)]="item.answer2Detail"></td>       
+        <td>
+            <div *ngIf="examinationForm.get('answer3Detail')?.invalid && examinationForm.get('answer3Detail')?.touched" class="hint">
+                กรุณากรอกคำตอบ 2
+            </div>
+        </td>   
     </tr>
     <tr>
         <td>คำตอบ 3</td>
-        <td><input type="text" name="answer3" value="" style="width: 100%;" [(ngModel)]="item.answer3Detail"></td>       
+        <td><input type="text" name="answer3" value="" style="width: 80%;" formControlName="answer3Detail" [(ngModel)]="item.answer3Detail"></td>       
+        <td>
+            <div *ngIf="examinationForm.get('answer3Detail')?.invalid && examinationForm.get('answer3Detail')?.touched" class="hint">
+                กรุณากรอกคำตอบ 3
+            </div>
+        </td>   
     </tr>
     <tr>
         <td>คำตอบ  4</td>
-        <td><input type="text" name="answer4" value="" style="width: 100%;" [(ngModel)]="item.answer4Detail"></td>       
+        <td><input type="text" name="answer4" value="" style="width: 80%;" formControlName="answer4Detail" [(ngModel)]="item.answer4Detail"></td>       
+        <td>
+            <div *ngIf="examinationForm.get('answer4Detail')?.invalid && examinationForm.get('answer4Detail')?.touched" class="hint">
+                กรุณากรอกคำตอบ 4
+            </div>
+        </td>   
     </tr>
     <tr>
         <td colspan="2" align="center">        
@@ -51,9 +79,9 @@
     </tr>
     <tr>
         <td colspan="2" align="center">
-            <button class="save-button" (click)="save()">บันทึก</button>
+            <button class="save-button" type="submit" >บันทึก</button>
             &nbsp;
-            <button class="cancel-button" (click)="cancel()">ยกเลิก</button>
+            <button class="cancel-button" type="reset" >ยกเลิก</button>
         </td>
     </tr>
         <tr>
@@ -76,3 +104,4 @@
 </tr>
 </table>
 </form>
+</div>

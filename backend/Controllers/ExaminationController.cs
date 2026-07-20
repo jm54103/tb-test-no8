@@ -23,8 +23,28 @@ public class ExaminationController : ControllerBase
         [HttpPost]
         public async Task<ActionResult<Examination>> PostExamination(Examination item)
         {
-            _context.Examinations.Add(item);
+            if (!this.ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }else{
+                item.RecordTimestamp = DateTime.UtcNow;
+                _context.Examinations.Add(item);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction(nameof(GetExaminations), new { id = item.Id }, item);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteExamination(int id)
+        {
+            var examination = await _context.Examinations.FindAsync(id);
+
+            if (examination == null)
+                return NotFound();
+
+            _context.Examinations.Remove(examination);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetExaminations), new { id = item.Id }, item);
+
+            return NoContent();
         }
 }
